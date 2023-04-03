@@ -2,6 +2,8 @@
 
 Jogo da memória realizado como atividade no curso de DS da Cubos Academy
 
+Deploy: https://matching-game-idng.onrender.com
+
 ## Funciona
 
 ![Untitled video - Made with Clipchamp](https://user-images.githubusercontent.com/115307935/229391955-047c5fcc-83af-4f97-98ae-1e01c38ec5fb.gif)
@@ -12,7 +14,12 @@ Se o jogador clicar em "Reset" as cartas são embaralhadas novamente e as que fo
 
 ![Untitled video - Made with Clipchamp (1)](https://user-images.githubusercontent.com/115307935/229391929-3f2c58fa-2ebb-4fb0-a8a0-4fdc2180e5b6.gif)
 
+## Mobile!
 
-## Aprendizados
+![Untitled video - Made with Clipchamp (2)](https://user-images.githubusercontent.com/115307935/229398224-f743ba9a-784b-4999-9675-e3d7cb3142b1.gif)
+
+
+## Aprendizados!
+
 
 Esse projeto foi ótimo para praticar React e, em especial, os Hooks. Nese caso utilizei bastante do useState para implementar a lógica.

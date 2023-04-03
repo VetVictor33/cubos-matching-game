@@ -1,0 +1,66 @@
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: linear-gradient(180deg, #000000 0%, rgba(15, 13, 15, 0.65) 100%);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  height: 100%;
+  width: 10vw;
+}
+
+aside button {
+  background: #F0C551;
+  border-radius: 6px;
+
+  padding: 10px 0;
+  color: aliceblue;
+
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  position: relative;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  padding-left: 30px;
+  margin: auto;
+  justify-content: center;
+}
+
+main .card {
+  width: 136px;
+  height: 236px;
+  cursor: pointer;
+}
+
+main .card:hover {
+  transform: scale(1.10);
+}
+
+
+.congrats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+}
+
+.congrats img {
+  position: absolute;
+  width: 300px;
+}

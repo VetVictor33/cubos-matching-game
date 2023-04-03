@@ -1,7 +1,8 @@
-.container {
+.App {
   height: 100vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -9,22 +10,25 @@
 
 aside {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 
   background: linear-gradient(180deg, #000000 0%, rgba(15, 13, 15, 0.65) 100%);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 10px;
-  height: 100%;
-  width: 10vw;
+  width: 100%;
+  height: 5vh;
 }
 
 aside button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #F0C551;
   border-radius: 6px;
 
-  padding: 10px 0;
-  color: aliceblue;
+  padding: 3%;
+  color: white;
+  font-size: 12px;
 
   text-transform: uppercase;
   border: none;
@@ -34,17 +38,17 @@ aside button {
 main {
   position: relative;
   width: fit-content;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 30px;
-  padding-left: 30px;
-  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
   justify-content: center;
+  align-items: center;
 }
 
 main .card {
-  width: 136px;
-  height: 236px;
+  height: 160px;
+  width: calc(160px* 0.57);
   cursor: pointer;
 }
 
@@ -52,15 +56,79 @@ main .card:hover {
   transform: scale(1.10);
 }
 
-
 .congrats {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80vw;
+  width: 100vw;
 }
 
 .congrats img {
   position: absolute;
   width: 300px;
+}
+
+@media (min-width: 600px) {
+  aside {
+    height: 6vh;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+
+  main .card {
+    height: 180px;
+    width: calc(180px* 0.57);
+  }
+}
+
+@media (min-width: 700px) {
+  aside {
+    height: 10vh;
+  }
+
+  main {
+    grid-template-columns: repeat(6, 1fr);
+
+  }
+
+  main .card {
+    height: 170px;
+    width: calc(170px* 0.57);
+  }
+}
+
+@media (min-width: 1000px) {
+  .App {
+    flex-direction: row;
+  }
+
+  aside {
+    flex-direction: column;
+    height: 100%;
+    width: 10vw;
+  }
+
+  main {
+    width: fit-content;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    padding-left: 30px;
+    margin: auto;
+  }
+
+  main .card {
+    height: 236px;
+    width: calc(236px* 0.57);
+  }
+
+  .congrats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    width: 70vw;
+  }
 }

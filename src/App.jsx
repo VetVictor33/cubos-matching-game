@@ -79,7 +79,7 @@ export default function App() {
   }
 
   return (
-    <div className='container'>
+    <div className='App'>
       <aside>
         <img src={Logo} alt='logo' />
         <button onClick={() => reset()}>Reset</button>

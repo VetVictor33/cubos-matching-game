@@ -2,7 +2,7 @@ import Logo from './assets/logo.svg'
 import cards from './database/cards';
 import CardBack from './assets/card-back.png'
 import Congrats from './assets/congrats.png'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Unclickable from './assets/unclickable.svg'
 
@@ -24,8 +24,11 @@ export default function App() {
   const [secondCard, setSecondCard] = useState(undefined);
   const [locked, setLocked] = useState(false);
   const [count, setCount] = useState(0);
+  const [tries, setTries] = useState(0);
   const [win, setWin] = useState(false);
   const [totalWins, setTotalWins] = useState(0);
+
+  const cardsRef = useRef(null);
 
   function handleCardClick(e, id) {
     if (locked) return
@@ -42,6 +45,7 @@ export default function App() {
       return
     }
     setIsFirstCard(true);
+    setTries(tries + 1);
     let localCount = count;
     if (card.slug === secondCard.slug) {
       const firstCardIndex = localCards.findIndex((localCard) => localCard.id === card.id);
@@ -77,6 +81,7 @@ export default function App() {
     setSecondCard(undefined);
     setIsFirstCard(true);
     setCount(0);
+    setTries(0);
     setWin(false);
   }
 
@@ -88,6 +93,8 @@ export default function App() {
           <div>
             <h1>Matches:</h1>
             <p>{count}</p>
+            <h1>Tries:</h1>
+            <p>{tries}</p>
           </div>
           <div>
             <h1>Wins:</h1>
@@ -96,11 +103,11 @@ export default function App() {
         </div>
         <button onClick={() => reset()}>Reset</button>
       </aside>
-      <main>
+      <main ref={cardsRef}>
         {!win ? cardsArray.map((card) => {
           const src = card.turned ? card.image : CardBack;
           return (
-            <img onClick={(e) => handleCardClick(e, card.id)} key={card.id} src={src} alt={card.slug} className={`card ${card.slug}`} />
+            <img onClick={(e) => handleCardClick(e, card.id)} key={card.id} src={src} alt={card.slug} className={`card ${card.slug} ${card.id}`} />
           )
         })
           : <div className='congrats'> < img src={Congrats} /></div>}

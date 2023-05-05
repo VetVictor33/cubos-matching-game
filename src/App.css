@@ -127,7 +127,7 @@ main .card:hover {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1220px) {
   .App {
     flex-direction: row;
   }
@@ -135,7 +135,7 @@ main .card:hover {
   aside {
     flex-direction: column;
     height: 100%;
-    width: 10vw;
+    width: fit-content;
   }
 
   main {
